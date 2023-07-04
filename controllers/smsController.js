@@ -8,7 +8,7 @@ const nodemailer = require('nodemailer')
 const newPrize = require('../models/Prize');
 
 const accountSID = 'AC5f7a45a9ed4f2b17a662df8339fcc3c7'
-const authtoken = '91eafda90ac940959fb329d13f081e70'
+const authtoken = process.env.TOKE_ID
 
 const httpDat= require('http');
 const MessagingResponse= require('twilio').twiml.MessagingResponse;
@@ -19,8 +19,8 @@ module.exports = function () {
 
     router.get('/sendsms', (req, res) => {
         const client = require('twilio')(
-            accountSID,
-            authtoken
+            process.env.ACCOUNTID,
+            process.env.TOKE_ID
         );
         client.messages.create({
             from: '+17097020449',
