@@ -1,0 +1,48 @@
+KrockBackend
+KrockBackend is a Node.js application for handling claims using an Express server and MongoDB for data storage.
+
+Installation
+Clone the repository:
+
+shell
+Copy code
+git clone <repository-url>
+Install dependencies:
+
+shell
+Copy code
+npm install
+Set up environment variables:
+
+Create a .env file in the root directory.
+Add the following variables to the .env file:
+makefile
+Copy code
+PORT=<server-port>
+MONGODB_URI=<mongodb-connection-uri>
+Usage
+Start the server:
+
+shell
+Copy code
+npm start
+The server will start running at http://localhost:<server-port>.
+
+The default server port is 8089 if not specified in the .env file.
+API routes:
+
+To add a new claim, send a POST request to /claims/add-claim with the claim data in the request body.
+Error handling:
+
+If any internal server errors occur, the server will respond with a JSON object containing an "error" property.
+Folder Structure
+controllers/: Contains the controllers for handling different routes.
+models/: Contains the Mongoose models for database interaction.
+public/: Contains static files served by the Express server.
+index.js: The main entry point of the application.
+Dependencies
+express: Fast, unopinionated, minimalist web framework for Node.js.
+mongoose: MongoDB object modeling tool.
+dotenv: Loads environment variables from a .env file.
+cors: Middleware for handling Cross-Origin Resource Sharing (CORS).
+body-parser: Parse incoming request bodies in a middleware.
